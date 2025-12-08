@@ -1,0 +1,75 @@
+.content {
+    width: 100%;
+    text-align: center;
+}
+
+.home-buttons {
+    position: fixed;
+    bottom: 3rem; /* distance du bas de la fenêtre */
+    left: 50%;
+    transform: translateX(-50%); /* centre horizontalement */
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    z-index: 900; /* au-dessus des blobs, mais pas au-dessus du fullscreen button */
+}
+
+
+
+@keyframes morph {
+    0% {
+        border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+    }
+    33% {
+        border-radius: 72% 28% 48% 48% / 28% 28% 72% 72%;
+    }
+    66% {
+        border-radius: 100% 56% 56% 100% / 100% 100% 56% 56%;
+    }
+    
+}
+
+.question-wrapper {
+    position: fixed;             /* reste à la même place quand on redimensionne */
+    top: 75%;                    /* distance depuis le haut de la fenêtre (ajuste selon ton besoin) */
+    left: 50%;                   /* centrage horizontal */
+    transform: translateX(-50%); /* recentre horizontalement */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;                  /* s’adapte à la largeur de l’écran */
+    max-width: 800px;            /* limite sur grands écrans */
+    padding: 1rem;
+    text-align: center;
+    flex-wrap: wrap;
+    z-index: 10;                 /* au-dessus du fond et des blobs */
+}
+
+.fullScreenButton {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    background: #000000;
+    color: white;
+    cursor: pointer;
+    border-radius: 7px;
+    display: flex;      
+    font-size: 1.2rem;
+    justify-content: center; 
+    align-items: center;
+    box-shadow: 0 0 10px dimgrey;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    z-index: 1000;
+}
+
+.fullScreenButton:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+

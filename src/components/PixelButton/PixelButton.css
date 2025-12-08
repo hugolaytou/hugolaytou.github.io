@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+.container {
+    display: block;
+    width: 40rem;
+    text-align: center;
+}
+
+.pixel {
+    font-size: 25px;
+    color: white;
+    height: auto;
+    margin: 10px;
+    font-family: 'VT323', monospace;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.1s ease, filter 0.2s ease;
+
+    line-height: 0;
+    image-rendering: pixelated;
+
+    border-style: solid;
+    border-width: 20px;
+}
+
+.pixel p {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: auto;
+    text-align: center;
+    margin: -20px -20px;
+    line-height: 20px;
+    padding: 10px 20px;
+
+    background: var(--pixel-color);
+    background:
+            linear-gradient(135deg, transparent 10px, var(--pixel-color) 0) top left,
+            linear-gradient(225deg, transparent 10px, var(--pixel-color) 0) top right,
+            linear-gradient(315deg, transparent 10px, var(--pixel-color) 0) bottom right,
+            linear-gradient(45deg,  transparent 10px, var(--pixel-color) 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-image:
+            radial-gradient(circle at 0 0, transparent 14px, var(--pixel-color) 15px),
+            radial-gradient(circle at 100% 0, transparent 14px, var(--pixel-color) 15px),
+            radial-gradient(circle at 100% 100%, transparent 14px, var(--pixel-color) 15px),
+            radial-gradient(circle at 0 100%, transparent 14px, var(--pixel-color) 15px);
+}
+
+.pixel:active {
+    top: 2px;
+}
+
+.pixel:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.2) drop-shadow(0 0 6px var(--pixel-color));
+}
