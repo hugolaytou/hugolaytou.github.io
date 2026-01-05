@@ -1,14 +1,14 @@
 import React from "react";
+import { random } from "../../hooks/random";
 import Image from "../../components/Image/Image";
 import Question from "../../components/Question/Question";
 import Header from "../../components/Header/Header";
-import { random } from "../../hooks/random";
-import questionsJson from "../../assets/questions.json"
+import AnimatedBackground from "../../components/AnimatedBackground/AnimatedBackground";
 import PixelButton from "../../components/PixelButton/PixelButton.tsx";
+import questionsJson from "../../assets/questions.json"
 import borderSalmon from "../../assets/buttonBgSalmon.png";
 import borderBlue from "../../assets/buttonBgBlue.png";
 import borderBlack from "../../assets/buttonBgBlack.png";
-import AnimatedBackground from "../../components/AnimatedBackground/AnimatedBackground";
 
 import "./Home.css";
 
@@ -43,15 +43,13 @@ const Home: React.FC = () => {
             <Image src={currentImage}/>
 
             <div className="question-wrapper">
-                <Question  text={currentQuestion.question}
-                           color={currentQuestion.color}
-                />
+                <Question  text={currentQuestion.question} color={currentQuestion.color}/>
             </div>
 
             <div className="home-buttons">
-                <PixelButton text="Changer l'oeuvre" onClick={nextImage} color={"#5293d7"} borderImage={borderBlue}/>
+                <PixelButton text="Changer l'oeuvre"    onClick={nextImage}          color={"#5293d7"} borderImage={borderBlue}/>
                 <PixelButton text="Changer la question" onClick={handleNextQuestion} color={"#ee7656"} borderImage={borderSalmon}/>
-                <PixelButton text="Tout changer" onClick={handleNextBoth} borderImage={borderBlack} />
+                <PixelButton text="Tout changer"        onClick={handleNextBoth}                       borderImage={borderBlack} />
             </div>
         </div>
     );

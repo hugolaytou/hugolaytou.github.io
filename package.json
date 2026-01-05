@@ -1,55 +1,73 @@
 {
-  "name": "vite-react",
+  "name": "pixels-and-palettes",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
-  "main": "electron/main.cjs",
+
+  "main": "electron/main/main.cjs",
+
   "scripts": {
     "lint": "eslint .",
-    "start": "electron .",
-    "preview": "vite preview",
+
     "dev": "concurrently -k \"vite\" \"npm:dev:electron\"",
     "dev:electron": "wait-on http://localhost:5173 && electron .",
+
     "build": "vite build",
-    "dist": "npm run build && electron-builder"
+    "dist": "npm run build && electron-builder",
+
+    "start": "electron ."
   },
+
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.9.4"
   },
+
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@types/react": "^18.3.26",
     "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "^4.3.1",
+
     "concurrently": "^9.2.1",
     "electron": "^38.3.0",
     "electron-builder": "^26.0.12",
+
     "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
+
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
+
     "vite": "^5.4.1",
     "wait-on": "^9.0.3"
   },
+
   "build": {
     "appId": "com.labodescultures.pixelsandpalettes",
     "productName": "Pixels & Palettes",
+
+    "asar": true,
+
     "files": [
       "dist/**/*",
       "electron/**/*",
       "assets/**/*"
     ],
+
     "directories": {
+      "output": "release",
       "buildResources": "assets"
     },
+
     "win": {
       "target": "nsis",
       "icon": "assets/logo_pixels_and_palettes_V3.ico"
     },
+
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
@@ -57,9 +75,12 @@
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true
     },
+
     "mac": {
-      "target": "dmg"
+      "target": "dmg",
+      "category": "public.app-category.graphics-design"
     },
+
     "linux": {
       "target": "AppImage"
     }

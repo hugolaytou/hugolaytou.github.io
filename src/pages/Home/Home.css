@@ -39,7 +39,6 @@
     border-radius: 50%;
     width: 16rem;
     height: 16rem;
-    border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
     background-size: cover;
 
 }
@@ -47,7 +46,7 @@
 .blob {
     content: "";
     top: 10rem;
-    right: 90rem;
+    right: 70rem;
     position: absolute;
     overflow: hidden;
     width: 16rem;
@@ -77,7 +76,7 @@
 .blob-3 {
     content: "";
     top: 17rem;
-    right: 20rem;
+    right: 15rem;
     position: absolute;
     overflow: hidden;
     width: 10rem;
@@ -137,5 +136,29 @@
 .question-wrapper {
     display: flex;
     justify-content: center;
+}
+
+body, html {
+    scrollbar-width: thin;              /* Firefox */
+    scrollbar-color: #ee7656 #1a1a1a;   /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #5293d7, #ee7656);
+    border-radius: 10px;
+    border: 2px solid #1a1a1a;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #6aa7ea, #ff8e73);
 }
 
