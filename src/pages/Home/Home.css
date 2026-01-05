@@ -4,15 +4,118 @@
 }
 
 .home-buttons {
-    position: fixed;
-    bottom: 3rem; /* distance du bas de la fenêtre */
-    left: 50%;
-    transform: translateX(-50%); /* centre horizontalement */
     display: flex;
     gap: 1rem;
     justify-content: center;
-    align-items: center;
-    z-index: 900; /* au-dessus des blobs, mais pas au-dessus du fullscreen button */
+    margin-top: 1.5rem;
+}
+
+
+.blob-6 {
+    border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+    animation: morph 8.75s linear infinite;
+    content: "";
+    background-size: cover;
+    position: absolute;
+    top: -40px;
+    right: 1rem;
+    overflow: hidden;
+    width: 16rem;
+    height: 16rem;
+    background: #416680;
+    z-index: 0;
+}
+
+.blob-7 {
+    border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+    animation: morph 8.75s linear infinite;
+    content: "";
+    background-size: cover;
+    overflow: hidden;
+    position: absolute;
+    bottom: 80px;
+    left: -80px;
+    background: #a39382;
+    border-radius: 50%;
+    width: 16rem;
+    height: 16rem;
+    background-size: cover;
+
+}
+
+.blob {
+    content: "";
+    top: 10rem;
+    right: 70rem;
+    position: absolute;
+    overflow: hidden;
+    width: 16rem;
+    height: 16rem;
+    border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+    animation: morph 8.75s linear infinite;
+    background-color: #5293d7;
+    background-size: cover;
+    background-position: center;
+}
+
+.blob-2 {
+    content: "";
+    top: 35rem;
+    right: 10rem;
+    position: absolute;
+    overflow: hidden;
+    width: 16rem;
+    height: 16rem;
+    border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+    background-color: #ee7656;
+    background-size: cover;
+    background-position: center;
+    animation: morph 8.75s linear infinite;
+}
+
+.blob-3 {
+    content: "";
+    top: 17rem;
+    right: 15rem;
+    position: absolute;
+    overflow: hidden;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+    background-color: #ffcc19;
+    background-size: cover;
+    background-position: center;
+    animation: morph 8.75s linear infinite;
+}
+
+.blob-4 {
+    content: "";
+    top: 40rem;
+    left: 24rem;
+    position: absolute;
+    overflow: hidden;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+    background-color: #448c77;
+    background-size: cover;
+    background-position: center;
+    animation: morph 8.75s linear infinite;
+}
+
+.blob-5 {
+    content: "";
+    top: 0.2rem;
+    left: 50rem;
+    position: absolute;
+    overflow: hidden;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+    background-color: #7874b5;
+    background-size: cover;
+    background-position: center;
+    animation: morph 8.75s linear infinite;
 }
 
 
@@ -27,49 +130,35 @@
     66% {
         border-radius: 100% 56% 56% 100% / 100% 100% 56% 56%;
     }
-    
+
 }
 
 .question-wrapper {
-    position: fixed;             /* reste à la même place quand on redimensionne */
-    top: 75%;                    /* distance depuis le haut de la fenêtre (ajuste selon ton besoin) */
-    left: 50%;                   /* centrage horizontal */
-    transform: translateX(-50%); /* recentre horizontalement */
-
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 80%;                  /* s’adapte à la largeur de l’écran */
-    max-width: 800px;            /* limite sur grands écrans */
-    padding: 1rem;
-    text-align: center;
-    flex-wrap: wrap;
-    z-index: 10;                 /* au-dessus du fond et des blobs */
 }
 
-.fullScreenButton {
-    position: fixed;
-    bottom: 20px; 
-    right: 20px; 
-    width: 2.5rem;
-    height: 2.5rem;
-    border: none;
-    background: #000000;
-    color: white;
-    cursor: pointer;
-    border-radius: 7px;
-    display: flex;      
-    font-size: 1.2rem;
-    justify-content: center; 
-    align-items: center;
-    box-shadow: 0 0 10px dimgrey;
-    transition: transform 0.2s ease, filter 0.2s ease;
-    z-index: 1000;
+body, html {
+    scrollbar-width: thin;              /* Firefox */
+    scrollbar-color: #ee7656 #1a1a1a;   /* Firefox */
 }
 
-.fullScreenButton:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2);
+body::-webkit-scrollbar {
+    width: 12px;
 }
 
+body::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #5293d7, #ee7656);
+    border-radius: 10px;
+    border: 2px solid #1a1a1a;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #6aa7ea, #ff8e73);
+}
 

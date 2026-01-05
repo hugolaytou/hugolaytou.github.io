@@ -1,14 +1,16 @@
 import React from "react";
+import { random } from "../../hooks/random";
 import Image from "../../components/Image/Image";
 import Question from "../../components/Question/Question";
 import Header from "../../components/Header/Header";
-import { random } from "../../hooks/random";
-import questionsJson from "../../assets/questions.json";
+import AnimatedBackground from "../../components/AnimatedBackground/AnimatedBackground";
+import PixelButton from "../../components/PixelButton/PixelButton.tsx";
+import questionsJson from "../../assets/questions.json"
+import borderSalmon from "../../assets/buttonBgSalmon.png";
+import borderBlue from "../../assets/buttonBgBlue.png";
+import borderBlack from "../../assets/buttonBgBlack.png";
+
 import "./Home.css";
-import backGroundSalmonButton from "../../assets/pixelSalmon2.png";
-import backGroundBlueButton from "../../assets/pixelBlue2.png";
-import backGroundBlackButton from "../../assets/pixelBlack2.png";
-import ExplodeButton from "../../components/ExplodeButton/ExplodeButton.tsx";
 
 const images = Object.values(
     import.meta.glob("../../assets/images/*.{jpg,jpeg,png,gif}", { eager: true, as: "url" })
@@ -21,36 +23,34 @@ const Home: React.FC = () => {
     const handleNextQuestion = () => {
         nextQuestion();
     };
-    
+
     const handleNextBoth = () => {
         nextImage();
         nextQuestion();
     };
 
-    const handleFullscreen = () => {
-        const elem = document.documentElement;
-
-        if (!document.fullscreenElement) {
-            elem.requestFullscreen?.();
-        } else {
-            document.exitFullscreen?.();
-        }
-    };
-
     return (
         <div className="content">
+            <AnimatedBackground />
             <Header/>
+            <div className="blob"></div>
+            <div className="blob-2"></div>
+            <div className="blob-3"></div>
+            <div className="blob-4"></div>
+            <div className="blob-5"></div>
+            <div className="blob-6"></div>
+            <div className="blob-7"></div>
             <Image src={currentImage}/>
+
             <div className="question-wrapper">
                 <Question  text={currentQuestion.question} color={currentQuestion.color}/>
             </div>
 
             <div className="home-buttons">
-                <ExplodeButton text="Changer l'oeuvre" color={"#5293d7"} image={backGroundBlueButton}  onClick={nextImage}/>
-                <ExplodeButton text="Changer la question" color="#ee7656" image={backGroundSalmonButton} onClick={handleNextQuestion}/>
-                <ExplodeButton text="Tout changer" color="black" image={backGroundBlackButton} onClick={handleNextBoth}/>
+                <PixelButton text="Changer l'oeuvre"    onClick={nextImage}          color={"#5293d7"} borderImage={borderBlue}/>
+                <PixelButton text="Changer la question" onClick={handleNextQuestion} color={"#ee7656"} borderImage={borderSalmon}/>
+                <PixelButton text="Tout changer"        onClick={handleNextBoth}                       borderImage={borderBlack} />
             </div>
-            <button className={"fullScreenButton"} onClick={handleFullscreen}>⛶</button>
         </div>
     );
 };
