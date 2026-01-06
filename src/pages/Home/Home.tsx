@@ -1,5 +1,5 @@
 import React from "react";
-import { random } from "../../hooks/random";
+import { useRandomPicker } from "../../hooks/random";
 import Image from "../../components/Image/Image";
 import Question from "../../components/Question/Question";
 import Header from "../../components/Header/Header";
@@ -17,8 +17,8 @@ const images = Object.values(
 ) as string[];
 
 const Home: React.FC = () => {
-    const [currentImage, nextImage] = random(images);
-    const [currentQuestion, nextQuestion] = random(questionsJson);
+    const [currentImage, nextImage] = useRandomPicker(images);
+    const [currentQuestion, nextQuestion] = useRandomPicker(questionsJson);
 
     const handleNextBoth = () => {
         nextImage();
