@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
 :root {
   background: url('./assets/background-1.png');
-  font-family: Monserrat regular, sans-serif;
+  font-family: "Montserrat regular", sans-serif;
   line-height: 1.5;
   font-weight: 400;
   background-size: cover;
