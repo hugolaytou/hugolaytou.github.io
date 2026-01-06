@@ -20,10 +20,6 @@ const Home: React.FC = () => {
     const [currentImage, nextImage] = random(images);
     const [currentQuestion, nextQuestion] = random(questionsJson);
 
-    const handleNextQuestion = () => {
-        nextQuestion();
-    };
-
     const handleNextBoth = () => {
         nextImage();
         nextQuestion();
@@ -48,7 +44,7 @@ const Home: React.FC = () => {
 
             <div className="home-buttons">
                 <PixelButton text="Changer l'oeuvre"    onClick={nextImage}          color={"#5293d7"} borderImage={borderBlue}/>
-                <PixelButton text="Changer la question" onClick={handleNextQuestion} color={"#ee7656"} borderImage={borderSalmon}/>
+                <PixelButton text="Changer la question" onClick={nextQuestion} color={"#ee7656"} borderImage={borderSalmon}/>
                 <PixelButton text="Tout changer"        onClick={handleNextBoth}                       borderImage={borderBlack} />
             </div>
         </div>
