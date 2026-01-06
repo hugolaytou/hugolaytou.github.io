@@ -14,3 +14,7 @@ npm run build
 Cette commande permet de créer l’exécutable d’installation de l’application Electron (Windows / macOS) :
 
 npm run dist
+
+🖥️ Accéder à l'application sur le WEB 
+
+https://hugolaytou.github.io/
