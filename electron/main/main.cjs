@@ -9,6 +9,7 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 1200,
         height: 800,
+        icon: path.join(__dirname, "../../src/assets/logo_pixels_and_palettes_V3.ico"),
         show: false,
         webPreferences: {
             preload: path.join(__dirname, "../preload/preload.js"),

@@ -54,8 +54,7 @@
 
     "files": [
       "dist/**/*",
-      "electron/**/*",
-      "assets/**/*"
+      "electron/**/*"
     ],
 
     "directories": {
@@ -65,7 +64,18 @@
 
     "win": {
       "target": "nsis",
-      "icon": "assets/logo_pixels_and_palettes_V3.ico"
+      "icon": "src/assets/logo_pixels_and_palettes_V3.png"
+    },
+
+    "mac": {
+      "target": "dmg",
+      "icon": "src/assets/logo_pixels_and_palettes_V3.png",
+      "category": "public.app-category.graphics-design"
+    },
+
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/logo_pixels_and_palettes_V3.png"
     },
 
     "nsis": {
@@ -74,15 +84,6 @@
       "perMachine": false,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true
-    },
-
-    "mac": {
-      "target": "dmg",
-      "category": "public.app-category.graphics-design"
-    },
-
-    "linux": {
-      "target": "AppImage"
     }
   }
 }
