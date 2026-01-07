@@ -19,6 +19,8 @@ function createWindow() {
 
     });
 
+    mainWindow.removeMenu();
+
     if (isDev) {
         mainWindow.loadURL("http://localhost:5173");
         mainWindow.webContents.openDevTools();
@@ -31,8 +33,6 @@ function createWindow() {
     mainWindow.once("ready-to-show", () => {
         mainWindow.show();
     });
-
-    win.removeMenu();
 }
 
 ipcMain.handle("ping", () => {
