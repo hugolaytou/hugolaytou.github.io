@@ -18,3 +18,12 @@ npm run dist
 🖥️ Accéder à l'application sur le WEB 
 
 https://hugolaytou.github.io/
+
+✨ Fonctionnalités
+
+- Compatibilité multiplateforme (Windows, macOS, Web). (Hugo Laytou)
+- Exploration interactive d'œuvres d'art. (Baptiste Aillot)
+- Interface utilisateur intuitive et conviviale. (Baptiste Aillot)
+- Animations fluides et transitions visuelles attrayantes. (Hugo Laytou)
+- Scrollbar personnalisée. (Baptiste Aillot)
+- Mise en place du workflow Github Actions pour le déploiement automatique sur GitHub Pages. (Hugo Laytou)

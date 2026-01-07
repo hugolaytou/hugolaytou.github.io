@@ -16,6 +16,7 @@ function createWindow() {
             nodeIntegration: false,
             contextIsolation: true
         }
+
     });
 
     if (isDev) {
@@ -30,6 +31,8 @@ function createWindow() {
     mainWindow.once("ready-to-show", () => {
         mainWindow.show();
     });
+
+    Menu.setApplicationMenu(null);
 }
 
 ipcMain.handle("ping", () => {
