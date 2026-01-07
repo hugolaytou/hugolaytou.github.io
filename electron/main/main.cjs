@@ -1,9 +1,12 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
+const { Menu } = require("electron");
 
 const isDev = !app.isPackaged;
 
 let mainWindow = null;
+
+Menu.setApplicationMenu(null);
 
 function createWindow() {
     mainWindow = new BrowserWindow({
