@@ -32,7 +32,7 @@ function createWindow() {
         mainWindow.show();
     });
 
-    Menu.setApplicationMenu(null);
+    win.removeMenu();
 }
 
 ipcMain.handle("ping", () => {
