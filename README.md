@@ -3,6 +3,7 @@
 Pixels & Palettes est un projet développé pour Le Labo des Cultures, en collaboration avec Culture pour l’Enfance.
 
 🚀 Lancer le projet
+
 ▶️ Build de l’application
 
 Cette commande génère le build de l’application (React + Vite) :
